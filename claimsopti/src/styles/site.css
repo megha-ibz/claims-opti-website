@@ -1,0 +1,279 @@
+:root {
+    --navy: #001d55;
+    --green: #04683a;
+}
+
+/* Homepage partner / insurer strip */
+.partner-logos {
+    --partner-logo-max-h: 1.45rem;
+}
+.partner-logos__cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--partner-logo-max-h);
+    min-width: 0;
+}
+.partner-logos__img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-height: var(--partner-logo-max-h);
+    max-width: 7.25rem;
+    object-fit: contain;
+    object-position: center;
+    opacity: 0.88;
+    transition: opacity 0.2s ease;
+}
+.partner-logos__img:hover {
+    opacity: 1;
+}
+.partner-logos__img--wide {
+    max-width: 8rem;
+}
+@media (min-width: 640px) {
+    .partner-logos {
+        --partner-logo-max-h: 1.65rem;
+    }
+    .partner-logos__img {
+        max-width: 8.25rem;
+    }
+    .partner-logos__img--wide {
+        max-width: 9rem;
+    }
+}
+@media (min-width: 1024px) {
+    .partner-logos {
+        --partner-logo-max-h: 1.85rem;
+    }
+    .partner-logos__img {
+        max-width: 9rem;
+    }
+    .partner-logos__img--wide {
+        max-width: 10.25rem;
+    }
+}
+
+/* Scroll-reveal animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* Hamburger animation */
+.hamburger-active #hamburgerTop {
+    transform: rotate(45deg) translate(4px, 4px);
+}
+.hamburger-active #hamburgerMid {
+    opacity: 0;
+}
+.hamburger-active #hamburgerBot {
+    transform: rotate(-45deg) translate(4px, -4px);
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Hero gradient with subtle accent pattern */
+.hero-gradient {
+    background-color: var(--navy);
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(4, 104, 58, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(4, 104, 58, 0.08) 0%, transparent 40%),
+        linear-gradient(135deg, var(--navy) 0%, #003070 60%, #001228 100%);
+}
+
+/* Hero grid background */
+.hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0, 29, 85, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 29, 85, 0.045) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 30%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 30%, transparent 100%);
+    pointer-events: none;
+}
+
+/* CTA button hover lift effect */
+.btn-cta {
+    transition: all 0.3s ease;
+}
+.btn-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(4, 104, 58, 0.35);
+}
+
+/* Page scroll progress bar (width set in JS) */
+.scroll-progress__fill {
+    max-width: 100%;
+    transition: width 0.12s ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+    .scroll-progress__fill {
+        transition: none;
+    }
+}
+
+/* CTA popup: light motion on open; visibility controlled via .hidden in JS */
+.cta-popup__panel {
+    transform: scale(0.99) translateY(6px);
+    opacity: 0;
+    transition: transform 0.28s ease, opacity 0.28s ease;
+}
+.cta-popup.is-open .cta-popup__panel {
+    transform: none;
+    opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+    .cta-popup__panel {
+        transform: none;
+        opacity: 1;
+        transition: none;
+    }
+}
+
+/* Back to top (visibility handled in JS) */
+.back-to-top {
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+}
+.back-to-top.is-visible {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Card hover effect */
+.card-hover {
+    transition: all 0.3s ease;
+}
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 29, 85, 0.14);
+}
+
+/* Nav shadow on scroll */
+.nav-scrolled {
+    box-shadow: 0 4px 20px rgba(0, 29, 85, 0.12);
+}
+
+/* Mega menu */
+.mega-menu.mega-menu-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#megaMenuChevron.rotated {
+    transform: rotate(180deg);
+}
+
+#mobileFeatureChevron.rotated {
+    transform: rotate(180deg);
+}
+
+/* Form field focus states */
+.form-field:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(4, 104, 58, 0.18);
+    outline: none;
+}
+
+/* Form validation states */
+.field-error {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+}
+
+.field-success {
+    border-color: var(--green) !important;
+}
+
+/* Breadcrumb separator + link styles */
+.breadcrumb a:hover span {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* Feature section alternating layout */
+@media (min-width: 768px) {
+    .feature-row:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+}
+
+/* Accessible focus ring for keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 2px;
+}
+
+/* Stats strip – scale pop on count-up finish */
+.stat-counter {
+    display: inline-block;
+}
+
+@keyframes statPop {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.18); }
+    100% { transform: scale(1); }
+}
+
+.stat-pop {
+    animation: statPop 0.35s ease-out;
+}
+
+/* Performance section – progress bar fill animation */
+.progress-fill {
+    width: 0;
+    transition: width 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.progress-fill.filled {
+    /* width set dynamically via JS */
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    .btn-cta:hover {
+        transform: none;
+    }
+    .card-hover:hover {
+        transform: none;
+    }
+    .progress-fill {
+        transition: none;
+    }
+    .stat-pop {
+        animation: none;
+    }
+    html {
+        scroll-behavior: auto;
+    }
+}
