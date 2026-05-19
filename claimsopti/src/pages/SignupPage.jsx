@@ -119,20 +119,20 @@ export function SignupPage() {
     <>
       <Breadcrumb items={breadcrumbItems} />
 
-      <section className="bg-gradient-to-br from-gray-50 to-white relative overflow-hidden py-16 lg:py-24">
-        {/* Decorative glows */}
-        <div
-          className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none opacity-40"
-          style={{ background: 'radial-gradient(circle, rgba(4,104,58,0.08) 0%, transparent 70%)' }}
-          aria-hidden="true"
-        />
-        <div
-          className="absolute bottom-0 left-0 w-[350px] h-[350px] rounded-full pointer-events-none opacity-30"
-          style={{ background: 'radial-gradient(circle, rgba(0,29,85,0.07) 0%, transparent 70%)' }}
-          aria-hidden="true"
-        />
+      <section className="bg-gradient-to-br from-gray-50 to-white relative">
+        {/* Decorative glows — own overflow-hidden wrapper so sticky is unaffected */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+          <div
+            className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-40"
+            style={{ background: 'radial-gradient(circle, rgba(4,104,58,0.08) 0%, transparent 70%)' }}
+          />
+          <div
+            className="absolute bottom-0 left-0 w-[350px] h-[350px] rounded-full opacity-30"
+            style={{ background: 'radial-gradient(circle, rgba(0,29,85,0.07) 0%, transparent 70%)' }}
+          />
+        </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
             {/* ── Left: Value Proposition (sticky) ── */}
