@@ -5,6 +5,7 @@ import { ContactPageRoute } from './pages/ContactPageRoute.jsx'
 import { FeatureDetailPage } from './pages/FeatureDetailPage.jsx'
 import { FeaturesPage } from './pages/FeaturesPage.jsx'
 import { HomePage } from './pages/HomePage.jsx'
+import { SignupPage } from './pages/SignupPage.jsx'
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="contact" element={<ContactPageRoute />} />
           <Route path="features" element={<FeaturesPage />} />
           <Route path="features/:slug" element={<FeatureDetailPage />} />
+          <Route path="estimate-transfer/signup" element={<SignupPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

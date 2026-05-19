@@ -298,7 +298,7 @@ export function Header() {
                 >
                   <p className="px-3 pt-2 pb-1 text-[10px] font-semibold uppercase tracking-wider text-gray-400">Services</p>
                   <Link
-                    to="/features/estimate-translation"
+                    to="/estimate-transfer/signup"
                     className="block px-4 py-2.5 text-sm font-medium text-navy hover:bg-gray-50 transition-colors"
                     onClick={() => setSignUpOpen(false)}
                   >
@@ -432,7 +432,7 @@ export function Header() {
           <div className="px-4 pb-2 space-y-1 border-b border-gray-100 mb-2">
             <p className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 pt-1">Services</p>
             <Link
-              to="/features/estimate-translation"
+              to="/estimate-transfer/signup"
               className="block py-2 pl-2 text-sm text-gray-600 hover:text-green transition-colors"
             >
               Estimate transfer service
